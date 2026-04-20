@@ -27,7 +27,7 @@ Counterintuitively, the surgeon who doesn't "look the part" may actually be the 
 
 ```{python}
 #| label: simulate-data
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 #| include: false
@@ -79,7 +79,7 @@ patients_df.head()
 
 ```{python}
 #| label: load-data-python
-#| echo: true
+#| echo: false
 
 import pandas as pd
 
@@ -109,7 +109,7 @@ Let's use data to figure out which surgeon performs better. @fig-plot-outcomes s
 ```{python}
 #| label: fig-plot-outcomes
 #| fig-cap: "Post-Surgical Symptom Score (lower is better) - Observed Data"
-#| echo: true
+#| echo: false
 
 import matplotlib.pyplot as plt
 
@@ -216,7 +216,7 @@ Since we cannot rerun history with randomization, we run an experiment to collec
 
 ```{python}
 #| label: simulate-data-randomized
-#| echo: true
+#| echo: false
 #| message: false
 #| warning: false
 #| include: false
@@ -264,7 +264,7 @@ patients_randomized_df.head()
 
 ```{python}
 #| label: load-data-randomized-python
-#| echo: true
+#| echo: false
 
 import pandas as pd
 
@@ -290,7 +290,7 @@ patients_randomized_df.head()
 ```{python}
 #| label: fig-plot-outcomes-randomized
 #| fig-cap: "Post-Surgical Symptom Score (lower is better) for randomized patients."
-#| echo: true
+#| echo: false
 
 import matplotlib.pyplot as plt
 
@@ -374,7 +374,7 @@ The key to handling a common cause confounder is to stratify by the common cause
 ```{python}
 #| label: fig-plot-outcomes-severity
 #| fig-cap: "Post-Surgical Symptom Score (lower is better) by Patient and Severity"
-#| echo: true
+#| echo: false
 
 import matplotlib.pyplot as plt
 
@@ -459,41 +459,9 @@ If you can't randomize, and that's most of the time, you stratify. Look within g
 
 The take-home lesson: The world is messy, and the numbers will mislead you if you let them. But if you understand the structure of the problem, if you draw the DAG and think about what causes what, you can defend yourself against being fooled. Randomization when you can, stratification when you can't. The tools are simple. The hard part is remembering to use them.
 
-## Professional Presentation Guidelines
 
-- **Clear narrative:** Your figures should tell the story described in the text
-- **Consistent styling:** All three figures should use the same color scheme and styling approach
-- **Colorblind-friendly:** Use the specified colors (#4E79A7 for Doc Dreamy, #E15759 for Doc Duck)
-- **Professional quality:** Clear labels, appropriate fonts, grid lines, legends
-- **Object-oriented matplotlib:** Use `fig, ax = plt.subplots(...)` and call methods on the `Axes` object (`ax.scatter`, `ax.set_title`, `ax.set_xlabel`, `ax.legend`, etc.). Avoid the stateful `plt.*` API.
-- **Beautifully formatted code:** Organize each figure's code into logical blocks (data prep, plotting, styling, annotations), use descriptive variable names, keep line lengths reasonable, and give recurring values (colors, labels, shaded-region bounds) a name at the top of the chunk instead of retyping the raw number or hex code each time.
-- **Match the narrative:** Your figures should illustrate the points made in the text about confounding, randomization, and stratification
 
-## Submission Checklist ✅
 
-**For 85% (Base Grade):**
 
-- [ ] Fork the `confounderChallenge` repository
-- [ ] Clone locally and open in Cursor
-- [ ] Recover all three figures (Tasks 1-3)
-- [ ] Ensure figures match the narrative descriptions
-- [ ] Render to HTML (`quarto render` or Render button)
-- [ ] Verify all figures render correctly
-- [ ] Push HTML to your repo and enable GitHub Pages
-- [ ] Share your site: `https://[your-username].github.io/confounderChallenge/`
 
-**For Final 15% (Bonus - 100% Total):**
 
-- [ ] Remove all challenge-related comments from code (no "TODO", "Challenge Task", "Recover Figure")
-- [ ] Transform document title/subtitle to "Using Randomization & Stratification to Overcome A Common Cause Confounder"
-- [ ] Remove challenge framing sections (challenge callout, submission checklist, tips)
-- [ ] Polish the document to read like a complete, professional report
-- [ ] Ensure the narrative flows naturally without challenge references
-
-## Tips
-
-- Read the narrative carefully—it contains hints about what each figure should show
-- Use the statistical results mentioned in the text to verify your figures are correct
-- Keep styling consistent across all three figures
-- Test your Python code chunks incrementally as you build each figure
-- Set random seeds if you're doing any additional analysis for reproducibility
