@@ -121,7 +121,7 @@ duck = patients_df[patients_df['doctor_name'] == 'Doc Duck']
 mean_dreamy = dreamy['post_surgical_score'].mean()
 mean_duck = duck['post_surgical_score'].mean()
 
-fig, ax = plt.subplots(figsize=(10, 6), layout='constrained')
+fig, ax = plt.subplots(figsize=(8, 5), layout='constrained')
 
 ax.scatter(
     dreamy['patient'],
@@ -302,7 +302,7 @@ duck = patients_randomized_df[patients_randomized_df['doctor_name'] == 'Doc Duck
 mean_dreamy = dreamy['post_surgical_score'].mean()
 mean_duck = duck['post_surgical_score'].mean()
 
-fig, ax = plt.subplots(figsize=(10, 6), layout='constrained')
+fig, ax = plt.subplots(figsize=(6, 4), layout='constrained')
 
 ax.scatter(
     dreamy['patient'],
@@ -388,7 +388,7 @@ duck = patients_df[patients_df['doctor_name'] == 'Doc Duck']
 mean_dreamy = dreamy['post_surgical_score'].mean()
 mean_duck = duck['post_surgical_score'].mean()
 
-fig, ax = plt.subplots(figsize=(10, 6), layout='constrained')
+fig, ax = plt.subplots(figsize=(6, 4), layout='constrained')
 
 ax.axvspan(overlap_xmin, overlap_xmax, alpha=0.15, color='gray', zorder=0)
 
